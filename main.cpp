@@ -9,9 +9,6 @@
 //#include <cmath>
 #include <string>
 
-
- 
-
 //TOYING AROUND WITH BOOST LIB ABOVE
 
 // ACTUAL STUFF BELOW
