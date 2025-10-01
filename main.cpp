@@ -51,16 +51,30 @@ class myChildObj : public myClass {
         };
 };
 
+// int main() {
+
+//     myClass myobj;
+
+//     myChildObj mo2;
+
+//     std::cout<<mo2.childjtest<<"\n";
+//     mo2.printProtectedvar();
+//     std::cout<<"name is "<<myobj.getName()<<"\n";
+//     std::cout<<"age is "<<myobj.getAge()<<"\n";
+
+//     return 0;
+//  }
+
+#include <boost/algorithm/string.hpp>
+#include <iostream>
+
 int main() {
+    std::string s = "hello world";
+    std::cout << boost::to_upper_copy(s) << "\n"; // "HELLO WORLD"
+}
 
-    myClass myobj;
+// int main() {
+//     std::vector<int> numbers;
 
-    myChildObj mo2;
-
-    std::cout<<mo2.childjtest<<"\n";
-    mo2.printProtectedvar();
-    std::cout<<"name is "<<myobj.getName()<<"\n";
-    std::cout<<"age is "<<myobj.getAge()<<"\n";
-
-    return 0;
- }
+//     return 0;
+// }
