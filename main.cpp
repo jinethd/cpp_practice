@@ -27,9 +27,9 @@ class myClass {
         void setAge(int b) {age = b;}
 
         //constructor
-        myClass(int x=5, std::string y="kate"){
-            age = x;
-            name = y;
+        myClass(int x=5, std::string y="kate"): name(y), age(x){
+            // age = x;
+            // name = y;
         }
 //internal method definition
         int in5yearsillbe(int age=0) {
