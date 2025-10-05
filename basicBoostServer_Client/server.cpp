@@ -5,13 +5,14 @@
 using boost::asio::ip::tcp;
 
 int main() {
-    //std::cout<<"Hello world \n"; make sure ts works
+    std::cout<<"Hello world \n"; 
 
     try {
-        
+
+        std::vector<std::string>> vs;
 
     } catch(std::exception& e) {
-        //std::cerr << "Exception: " << e.what() << "\n";
+        std::cerr << "Exception: " << e.what() << "\n";
     }
         
 
