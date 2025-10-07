@@ -9,7 +9,7 @@ int main() {
 
     try {
 
-        std::vector<std::string>> vs;
+        //std::vector<std::string>> vs;
 
     } catch(std::exception& e) {
         std::cerr << "Exception: " << e.what() << "\n";
