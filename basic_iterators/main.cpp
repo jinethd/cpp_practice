@@ -13,10 +13,15 @@ class Iterators {
 
             std::vector<int> vi = {1,2,3,4};
             vi.push_back(3);
+            vi.emplace_back(4);
             // no push_front as
 
             std::deque<int> di = {1,2,3};
             di.push_front(-1);
+
+            std::cout<<"jinethsbeginetsest \n";
+            auto begin=vi.begin();
+            std::cout<<"test"<<*begin;
 
             std::cout<<"vector first element: "<<vi[0]<<'\n';
 
