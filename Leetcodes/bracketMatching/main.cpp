@@ -1,4 +1,6 @@
 #include <iostream>
+#include <stack>
+#include <unordered_map>
 
 bool isValid(std::string s) {
 
@@ -7,9 +9,6 @@ bool isValid(std::string s) {
     std::stack<char> stack;
     std::unordered_map<char,char> brackets = {{')','('}, {']','['}, {'}','{'}};
 
-    stack.emplace(s[0]);
-    s.erase(0,1);
-    std::cout<<s<<"\n";
 
     // loop through the letters in the string
     for (char letter : s) {
