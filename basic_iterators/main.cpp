@@ -1,4 +1,5 @@
 #include <iostream>
+//using namespace std;
 
 
 class Iterators {
@@ -20,7 +21,7 @@ class Iterators {
             di.push_front(-1);
 
             std::cout<<"jinethsbeginetsest \n";
-            auto begin=vi.begin();
+            auto begin=vi.cbegin();
             std::cout<<"test"<<*begin;
 
             std::cout<<"vector first element: "<<vi[0]<<'\n';
@@ -48,12 +49,35 @@ class Iterators {
 
 };
 
+class Leetcodes {
+    public:
+        std::vector<int> twoSum(std::vector<int>& vec, int target) {
+            std::unordered_map<int,int> num_map;
+            for(int i=0; i<vec.size();i++){
+                int complement = target - vec[i];
+                if (num_map.find(complement) != num_map.end()) {
+                    return {num_map[complement],i};
+                }
+                num_map[vec[i]]=i;
+            }
+
+            return {};
+        };
+};
+
 int main() {
 
-    Iterators i;
+    // Iterators i;
+    // i.vectoranddeque();
 
-    i.vectoranddeque();
+    std::vector<int> nums = {2, 7, 11, 15};
+    int target = 9;
 
+    Leetcodes L;
+
+    std::vector<int> result = L.twoSum(nums,target);
+
+    std::cout<<"["<<result[0]<<", "<<result[1]<<"]"<<" \n";
 
     return 0;
 }
