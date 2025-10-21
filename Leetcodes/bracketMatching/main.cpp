@@ -26,7 +26,7 @@ bool isValid(std::string s) {
         }
         
     }
-    return true;
+    return stack.empty();
 }
 
 int main() {
