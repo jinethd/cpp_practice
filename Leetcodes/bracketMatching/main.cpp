@@ -2,21 +2,21 @@
 #include <stack>
 #include <unordered_map>
 
-bool isValid(std::string s) {
+bool isValid(const std::string& s) {
 
     // We will use a stack (LIFO) and an unordered map to map every closing bracket as keys to the corresponding
     // opening bracket as values
     std::stack<char> stack;
-    std::unordered_map<char,char> brackets = {{')','('}, {']','['}, {'}','{'}};
+    static const std::unordered_map<char,char> brackets = {{')','('}, {']','['}, {'}','{'}};
 
 
     // loop through the letters in the string
     for (char letter : s) {
 
         // if it is a key in our map
-        if(brackets.find(letter) != brackets.end()) {
-            if (stack.empty() || stack.top() != brackets[letter]) {
-                std::cout<<brackets[letter]<<"\n";
+        if(brackets.count(letter)) {
+            if (stack.empty() || stack.top() != brackets.at(letter)) {
+                std::cout<<brackets.at(letter)<<"\n";
                 return false;
             }
             stack.pop();
