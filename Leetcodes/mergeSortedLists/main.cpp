@@ -45,14 +45,22 @@ void printList(ListNode* head) {
 // the head of the final list.
 class Solution {
 public:
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+    // ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         
-    }
+    // }
 };
 
 int main() {
 
-    Solution sol;
+    // sorted vectors
+    std::vector<int> vec1 = {1,2,4,6,11};
+    std::vector<int> vec2 = {1,2,4,6,11};
+
+    ListNode* dummyHead = buildList(vec1);
+
+    printList(dummyHead);
+
+    //Solution sol;
 
     //sol.mergeTwoLists
 
