@@ -60,6 +60,8 @@ int main() {
 
     printList(dummyHead);
 
+    std::cout<<"what even happens "<<dummyHead->val<<'\n';
+
     //Solution sol;
 
     //sol.mergeTwoLists
