@@ -4,6 +4,10 @@
 
 // each node will store a value and a pointer to the next node
 // we also have overloaded constructors to use, using member initializer lists
+
+#include <iostream>
+#include <vector>
+
 struct ListNode {
     int val;
     ListNode *next;
@@ -11,6 +15,31 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
+
+// function to return a 'ListNoded' pointer from vector
+ListNode* buildList(const std::vector<int>& vals) {
+    if (vals.empty()) return nullptr;
+
+    ListNode* head = new ListNode(vals[0]);
+    ListNode* current = head;
+
+    for (size_t i = 1; i < vals.size(); i++) {
+        current->next = new ListNode(vals[i]);
+        current = current->next;
+    }
+
+    return head;
+}
+
+// function to print a list
+void printList(ListNode* head) {
+    while (head) {
+        std::cout << head->val;
+        if (head->next) std::cout << " -> ";
+        head = head->next;
+    }
+    std::cout << std::endl;
+}
 
 // this function will take two pointers to the first elements of each list as arguments and return a pointer to 
 // the head of the final list.
