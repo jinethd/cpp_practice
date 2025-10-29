@@ -12,10 +12,12 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+// this function will take two pointers to the first elements of each list as arguments and return a pointer to 
+// the head of the final list.
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        // Your code here
+        
     }
 };
 
