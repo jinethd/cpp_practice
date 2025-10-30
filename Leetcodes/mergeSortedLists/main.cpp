@@ -54,7 +54,7 @@ int main() {
 
     // sorted vectors
     std::vector<int> vec1 = {1,2,4,6,11};
-    std::vector<int> vec2 = {1,2,4,6,11};
+    std::vector<int> vec2 = {1,5,6,11};
 
     ListNode* dummyHead = buildList(vec1);
 
