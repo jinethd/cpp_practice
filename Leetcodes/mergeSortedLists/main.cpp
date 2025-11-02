@@ -47,8 +47,16 @@ void printList(ListNode* head) {
 // the head of the final list.
 class Solution {
 public:
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+    ListNode* mergeTwoLists(ListNode* list1current, ListNode* list2current) {
         
+        if (list1current->val <= list2current->val) {
+            ListNode* first = new ListNode(list1current->val);
+            
+        } else {
+            ListNode* first = new ListNode(list2current->val);
+        }
+
+
 
         return nullptr;
     }
