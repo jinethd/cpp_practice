@@ -48,17 +48,47 @@ void printList(ListNode* head) {
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* list1current, ListNode* list2current) {
+
+        ListNode* first = new ListNode();
+        ListNode* current = new ListNode();
+        first->next = current;
         
+        // initialise first element
         if (list1current->val <= list2current->val) {
-            ListNode* first = new ListNode(list1current->val);
-            
+            first->val = list1current->val;
+            if (list1current->val == list2current->val) list2current = list2current->next;
+            list1current = list1current->next;
         } else {
-            ListNode* first = new ListNode(list2current->val);
+            first->val = list2current->val;
+            list2current = list2current->next;
         }
 
+        while (list1current && list2current) {
+            if (list1current->val <= list2current->val) {
+                current->next = new ListNode(list1current->val);
+                if (list1current->val == list2current->val) list2current = list2current->next;
+                list1current = list1current->next;
+                current = current->next;
+            } else {
+                current->next = new ListNode(list2current->val);
+                list2current = list2current->next;
+                current = current->next;
+            }
+        };
 
+        while (list1current || list2current){
 
-        return nullptr;
+        if (list1current) {
+            current->next = new ListNode(list1current->val);
+            current = current->next;
+            list1current = list1current->next;
+        } else {
+            current->next = new ListNode(list2current->val);
+            current = current->next;
+            list2current = list2current->next;
+        }
+    }
+        return first;
     }
 };
 
@@ -71,13 +101,14 @@ int main() {
     ListNode* list1Head = buildList(vec1);
     ListNode* list2Head = buildList(vec2);
 
-    printList(list1Head);
+    //printList(list1Head);
 
-    std::cout<<"what even happens "<<list1Head->val<<'\n';
+    //std::cout<<"what even happens "<<list1Head->val<<'\n';
 
     Solution sol;
 
-    sol.mergeTwoLists(list1Head,list2Head);
+    ListNode* finalHead = sol.mergeTwoLists(list1Head,list2Head);
+    printList(finalHead);
 
     return 0;
 }
