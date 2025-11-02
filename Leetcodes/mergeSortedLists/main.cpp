@@ -8,6 +8,8 @@
 #include <iostream>
 #include <vector>
 
+// This is the struct for our nodes, they contain a value, and a pointer to the next node, 
+// as well as overloaded constructors that we will use to build our list 
 struct ListNode {
     int val;
     ListNode *next;
@@ -45,9 +47,11 @@ void printList(ListNode* head) {
 // the head of the final list.
 class Solution {
 public:
-    // ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         
-    // }
+
+        return nullptr;
+    }
 };
 
 int main() {
@@ -56,15 +60,16 @@ int main() {
     std::vector<int> vec1 = {1,2,4,6,13};
     std::vector<int> vec2 = {1,5,6,11};
 
-    ListNode* dummyHead = buildList(vec1);
+    ListNode* list1Head = buildList(vec1);
+    ListNode* list2Head = buildList(vec2);
 
-    printList(dummyHead);
+    printList(list1Head);
 
-    std::cout<<"what even happens "<<dummyHead->val<<'\n';
+    std::cout<<"what even happens "<<list1Head->val<<'\n';
 
-    //Solution sol;
+    Solution sol;
 
-    //sol.mergeTwoLists
+    sol.mergeTwoLists(list1Head,list2Head);
 
     return 0;
 }
