@@ -46,12 +46,12 @@ void printList(ListNode* head) {
 // this function will take two pointers to the first elements of each list as arguments and return a pointer to 
 // the head of the final list.
 class Solution {
+    // we will take a dummy node (before the first) so we can run a while loop without having to initialise a 'first element'
 public:
     ListNode* mergeTwoLists(ListNode* list1current, ListNode* list2current) {
 
         ListNode* dummy = new ListNode();
         ListNode* current = dummy;
-        //first->next = current;
         
         while (list1current && list2current) {
             if (list1current->val <= list2current->val) {
@@ -90,10 +90,6 @@ int main() {
 
     ListNode* list1Head = buildList(vec1);
     ListNode* list2Head = buildList(vec2);
-
-    //printList(list1Head);
-
-    //std::cout<<"what even happens "<<list1Head->val<<'\n';
 
     Solution sol;
 
