@@ -4,8 +4,8 @@
 class Solution {
 public:
     int removeDuplicates(std::vector<int>& nums) {
-        // Your code here
-        return 0; // placeholder
+        
+        return 0; 
     }
 };
 
