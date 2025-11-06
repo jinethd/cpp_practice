@@ -7,9 +7,15 @@ class Solution {
 public:
     void moveZeroes(std::vector<int>& nums) {
         auto write = nums.begin();
-        for (auto read = nums.begin();read !=nums.end();read++) {
-            if (*read != 0) *write = *read;
-            ++write;
+        for (auto read = nums.begin();read !=nums.end();++read) {
+            if (*read != 0){
+                *write = *read;
+                ++write;
+            }
+        }
+
+        for (auto it = write;it!=nums.end();++it){
+            *it=0;
         }
     }
 };
@@ -17,7 +23,7 @@ public:
 int main() {
     Solution sol;
 
-    std::vector<int> nums = {0, 1, 0, 3, 12};
+    std::vector<int> nums = {0,0, 1, 0, 3, 12,0};
     sol.moveZeroes(nums);
     auto it = nums.begin();
 
