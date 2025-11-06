@@ -17,14 +17,16 @@ public:
             }
         };
 
-        
+        nums.erase(write+1,nums.end());
 
-        return 0; 
+        return nums.size(); 
     }
 };
 
 // print out a vector where all duplicates are removed, it is ok to have garbage after the unique elements are added
 // e.g. {0,0,1,1,1,2,2,3,3,4}; -> {0,1,2,3,4,0,1,1,2,3}
+// COMMITTED
+// will now modify the above function to remove the garbage
 int main() {
     Solution sol;
     std::vector<int> nums = {0,0,1,1,1,2,2,3,3,4,4,4,4,5,5,6,88};
