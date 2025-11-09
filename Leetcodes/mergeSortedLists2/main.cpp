@@ -8,7 +8,20 @@
 class Solution {
 public:
     void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
-        // your code here
+        for(int i = (m+n-1);i>=0;i--){
+            std::cout<<i<<"->";
+            if(nums1[m]>=nums2[n]){
+                if(nums1[m]==nums2[n]){
+                    nums1[i]=nums2[n];
+                    --n;
+                }
+                nums1[i]=nums1[m];
+                --m;
+            } else {
+                nums1[i]=nums2[n];
+                --n;
+            }
+        }
     }
 };
 
