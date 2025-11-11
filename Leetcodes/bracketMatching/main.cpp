@@ -38,6 +38,5 @@ int main() {
     } else {
         std::cout<<"String is invalid\n";
     }
-
     return 0;
 }
