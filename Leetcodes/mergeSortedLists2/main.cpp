@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <chrono>
 
 // In this merging lists task we get the integers m and n, m is the number of non-zero elements
 // in nums1, n is the number of elements in the array.
@@ -32,11 +33,18 @@ int main() {
     std::vector<int> nums2 = {2,5,6};
     int m = 3, n = 3;
 
+    auto start = std::chrono::high_resolution_clock::now();
     sol.merge(nums1, m, nums2, n);
+    auto end = std::chrono::high_resolution_clock::now();
 
+    std::cout<<'\n';
     std::cout << "Merged array: ";
     for (int num : nums1) std::cout << num << " ";
     std::cout << "\n";
+
+    std::cout << "Time elapsed: "
+              << std::chrono::duration_cast<std::chrono::nanoseconds>(end-start).count()
+              << "ns\n";
 
     return 0;
 }
