@@ -9,20 +9,27 @@
 class Solution {
 public:
     void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n) {
-        for(int i = (m+n-1);i>=0;i--){
-            std::cout<<i<<"->";
-            if(nums1[m]>=nums2[n]){
-                if(nums1[m]==nums2[n]){
-                    nums1[i]=nums2[n];
-                    --n;
-                }
-                nums1[i]=nums1[m];
-                --m;
-            } else {
-                nums1[i]=nums2[n];
-                --n;
-            }
-        }
+        // for(int i = (m+n-1);i>=0;i--){
+        //     std::cout<<i<<"->";
+        //     if(nums1[m]>=nums2[n]){
+        //         if(nums1[m]==nums2[n]){
+        //             std::cout<<"wearehere"<<nums1[m]<< ' '<<nums2[n];
+        //             nums1[i]=nums2[n];
+        //             --n;
+        //         }
+        //         nums1[i]=nums1[m];
+        //         --m;
+        //     } else {
+        //         nums1[i]=nums2[n];
+        //         --n;
+        //     }
+        // }
+
+        int i = m-1;
+        int j = n-1;
+        int m = n+m-1;
+
+        
     }
 };
 
@@ -47,4 +54,6 @@ int main() {
               << "ns\n";
 
     return 0;
+
 }
+
