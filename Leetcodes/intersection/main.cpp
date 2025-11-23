@@ -9,13 +9,13 @@ public:
     std::vector<int> intersect(std::vector<int>& nums1, std::vector<int>& nums2) {
         
         // this will be where we store our solution
-        std::vector<int> sol = {};
+        std::vector<int> sol;
 
         std::unordered_map<int, int> counts;
         
         // create KvP of number: no. of occurences
         for (int i : nums1) {
-            counts[i] += 1;
+            counts[i]++;
         }
 
         // std::cout<<"this is our KvP for array nums1"<< std::endl;
@@ -24,9 +24,9 @@ public:
         // }
 
         for (int i: nums2) {
-            if(counts.find(i) != counts.end() && counts[i]>0){
+            if(counts[i]>0){
                 sol.push_back(i);
-                counts[i] -= 1;
+                counts[i]--;
             }
         }
 
