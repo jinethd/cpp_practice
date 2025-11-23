@@ -15,11 +15,7 @@ public:
         
         // create KvP of number: no. of occurences
         for (int i : nums1) {
-            if(counts.find(i) != counts.end()){
-                counts[i] += 1;
-            } else {
-                counts[i] = 1;
-            }
+            counts[i] += 1;
         }
 
         // std::cout<<"this is our KvP for array nums1"<< std::endl;
