@@ -20,13 +20,17 @@ public:
             std::cout<<i<<std::endl;
         }
 
-        for(int i:vec){
-            for(int j:vec){
-                
+        int count=0;
+
+        //O(n^2) solution
+        for(auto right=0;right<vec.size();++right){
+            if(vec[right]==k) ++count;
+            for(auto left=1;left<=right;++left){
+                if(vec[right]-vec[left-1] == k) ++count;
             }
         }
 
-        return 0;
+        return count;
     }
 };
 
@@ -34,6 +38,8 @@ int main() {
     Solution sol;
     std::vector<int> nums = {1, 2, 3};
     int k = 3;
+
+    //sol.subarraySum(nums, k);
 
     std::cout << sol.subarraySum(nums, k) << "\n";
     return 0;
