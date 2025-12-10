@@ -1,13 +1,16 @@
 #include <iostream>
 #include <vector>
+#include <unordered_map>
 
 class Solution {
 public:
     int subarraySum(std::vector<int>& nums, int k) {
 
-        int tempTotal = 0, total = 0;
+        int tempTotal = 0, runningTotal = 0;
 
         std::vector<int> vec;
+
+        std::unordered_map<int,int> running_prefix_count;
 
         for (int num:nums){
             //std::cout<<num<<", "<< std::endl;
@@ -16,19 +19,38 @@ public:
             vec.push_back(tempTotal);
         }
 
-        for (int i: vec){
-            std::cout<<i<<std::endl;
-        }
+        // for (int i: vec){
+        //     std::cout<<i<<std::endl;
+        // }
 
         int count=0;
 
-        //O(n^2) solution
-        for(auto right=0;right<vec.size();++right){
-            if(vec[right]==k) ++count;
-            for(auto left=1;left<=right;++left){
-                if(vec[right]-vec[left-1] == k) ++count;
+        //O(n^2) solution below
+        // for(auto right=0;right<vec.size();++right){
+        //     if(vec[right]==k) ++count;
+        //     for(auto left=1;left<=right;++left){
+        //         if(vec[right]-vec[left-1] == k) ++count;
+        //     }
+        // }
+
+        //O(n) solution
+
+        for (int i:nums){
+
+            // add number to our variable
+            runningTotal += i;
+            
+            // this means that the first elements up to and including i sum to k
+            if (runningTotal==k) ++count;
+
+            if(running_prefix_count.find(runningTotal-k)!=running_prefix_count.end()){
+                count += running_prefix_count[runningTotal-k];
             }
+
+            ++running_prefix_count[runningTotal];
+
         }
+
 
         return count;
     }
