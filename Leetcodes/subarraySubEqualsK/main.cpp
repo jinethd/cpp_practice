@@ -45,10 +45,15 @@ public:
 
             if(running_prefix_count.find(runningTotal-k)!=running_prefix_count.end()){
                 count += running_prefix_count[runningTotal-k];
+                //std::cout<<runningTotal-k<<", "<<running_prefix_count[runningTotal-k]<<std::endl;
             }
 
             ++running_prefix_count[runningTotal];
 
+        }
+
+        for (const auto& pair:running_prefix_count){
+            std::cout<<"{"<<pair.first<<","<<pair.second<<"}"<<std::endl;
         }
 
 
@@ -58,8 +63,8 @@ public:
 
 int main() {
     Solution sol;
-    std::vector<int> nums = {1, 2, 3};
-    int k = 3;
+    std::vector<int> nums = {10, 2, -2, -20, 10};
+    int k = -10;
 
     //sol.subarraySum(nums, k);
 
