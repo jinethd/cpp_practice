@@ -72,10 +72,10 @@ public:
             list1current = list1current->next;
         }
 
-        while (list2current) {
-            current->next = new ListNode(list2current->val);
+        while (list1current) {
+            current->next = new ListNode(list1current->val);
             current = current->next;
-            list2current = list2current->next;
+            list1current = list1current->next;
         }
 
         return dummy->next;
