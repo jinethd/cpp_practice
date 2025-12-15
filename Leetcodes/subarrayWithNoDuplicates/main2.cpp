@@ -9,10 +9,10 @@ public:
 
         if(s.empty()) return 0;
         
-        size_t bestLength = 0, left = 0;
+        int bestLength = 0, left = 0;
         std::unordered_map<char, int> lastSeen;
 
-        for(size_t right=0;right<s.size();right++){
+        for(int right=0;right<s.size();right++){
             char c = s[right];
 
             if (lastSeen.count(c) && lastSeen[c] > left){
