@@ -72,12 +72,21 @@ int main() {
 
     std::vector<int> nums = {2, 7, 11, 15};
     int target = 9;
+    int& ref = target;
+
+    int* i = new int(1);
+
+    std::cout<< &target<<". "<<*i<< std::endl;
+    {
+        /* code */
+    }
+    
 
     Leetcodes L;
 
-    std::vector<int> result = L.twoSum(nums,target);
+    //std::vector<int> result = L.twoSum(nums,target);
 
-    std::cout<<"["<<result[0]<<", "<<result[1]<<"]"<<" \n";
+    //std::cout<<"["<<result[0]<<", "<<result[1]<<"]"<<" \n";
 
     return 0;
 }
