@@ -16,7 +16,8 @@ bool isValid(const std::string& s) {
         // if it is a key in our map
         if(brackets.count(letter)) {
             if (stack.empty() || stack.top() != brackets.at(letter)) {
-                std::cout<<brackets.at(letter)<<"\n";
+                std::cout<<"From left to right this is the first char that violates it: "<<brackets.at(letter)
+                <<" it is at position"<< s[letter] <<"\n";
                 return false;
             }
             stack.pop();
@@ -30,7 +31,7 @@ bool isValid(const std::string& s) {
 }
 
 int main() {
-    std::string str = "([)]";
+    std::string str = "([(])";
     bool result = isValid(str);
 
     if(result) {
