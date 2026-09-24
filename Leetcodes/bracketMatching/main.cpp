@@ -7,7 +7,7 @@ bool isValid(const std::string& s) {
     // We will use a stack (LIFO) and an unordered map to map every closing bracket as keys to the corresponding
     // opening bracket as values
     std::stack<char> stack;
-    static const std::unordered_map<char,char> brackets = {{')','('}, {']','['}, {'}','{'}};
+    const std::unordered_map<char,char> brackets = {{')','('}, {']','['}, {'}','{'}};
 
 
     // loop through the letters in the string
