@@ -6,15 +6,14 @@ class Iterators {
     public:
         void vectoranddeque() {
 
-            // std::string myName;
-
-            // std::cout<<"give me your name: ";
-
-            // std::cin >>myName;
-
             std::vector<int> vi = {1,2,3,4};
+            vi.shrink_to_fit();
+
+            std::cout<<"Address before realloc: "<<vi.data()<< " size before realloc: "<< vi.size()<< " capacity before realloc: "<< vi.capacity()<<'\n';
             vi.push_back(3);
             vi.emplace_back(4);
+
+            std::cout<<"Address after realloc: "<<vi.data()<< " size after realloc: "<< vi.size()<< " capacity after realloc: "<< vi.capacity()<<'\n';
             // no push_front as
 
             std::deque<int> di = {1,2,3};
@@ -22,7 +21,7 @@ class Iterators {
 
             std::cout<<"jinethsbeginetsest \n";
             auto begin=vi.cbegin();
-            std::cout<<"test"<<*begin;
+            std::cout<<"test"<<*begin<< std::endl;
 
             std::cout<<"vector first element: "<<vi[0]<<'\n';
 
@@ -70,16 +69,16 @@ int main() {
     Iterators test;
     test.vectoranddeque();
 
-    std::vector<int> nums = {2, 7, 11, 15};
-    int target = 9;
-    int& ref1 = target;
+    // std::vector<int> nums = {2, 7, 11, 15};
+    // int target = 9;
+    // int& ref1 = target;
 
-    int* i = new int(1);
+    // int* i = new int(1);
 
-    std::cout<< ref1<<". "<<*i<< std::endl;
+    // std::cout<< ref1<<". "<<*i<< std::endl;
     
 
-    Leetcodes L;
+    // Leetcodes L;
 
     //std::vector<int> result = L.twoSum(nums,target);
 
