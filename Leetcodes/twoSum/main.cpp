@@ -33,7 +33,7 @@ class Iterators {
                 std::cout<< vi[i] << " ";
             }
 
-            std::cout<<std::endl;
+            std::cout<<'\n';
 
             std::cout<<"printing the deque \n";
             for(int i=0;i<di.size();++i) {
@@ -67,19 +67,16 @@ class Leetcodes {
 
 int main() {
 
-    // Iterators i;
-    // i.vectoranddeque();
+    Iterators test;
+    test.vectoranddeque();
 
     std::vector<int> nums = {2, 7, 11, 15};
     int target = 9;
-    int& ref = target;
+    int& ref1 = target;
 
     int* i = new int(1);
 
-    std::cout<< &target<<". "<<*i<< std::endl;
-    {
-        /* code */
-    }
+    std::cout<< ref1<<". "<<*i<< std::endl;
     
 
     Leetcodes L;
@@ -89,4 +86,6 @@ int main() {
     //std::cout<<"["<<result[0]<<", "<<result[1]<<"]"<<" \n";
 
     return 0;
+
+
 }
