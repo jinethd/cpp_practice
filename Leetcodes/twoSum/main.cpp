@@ -36,7 +36,7 @@ class Iterators {
 
             std::cout<<"printing the deque \n";
             for(int i=0;i<di.size();++i) {
-                std::cout<< vi[i] << " ";
+                std::cout<< di[i] << " ";
             }
 
             std::cout<<std::endl;
