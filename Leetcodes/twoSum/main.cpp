@@ -17,7 +17,7 @@ class Iterators {
             // no push_front as
 
             std::deque<int> di = {1,2,3};
-            di.push_front(-1);
+            di.push_back(-1);
 
             std::cout<<"jinethsbeginetsest \n";
             auto begin=vi.cbegin();
