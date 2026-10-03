@@ -20,16 +20,17 @@ public:
         
         while(l1 || l2 || carry>0){
 
-            // get the total of the sum
+            if (!l1){l1->val=0;};
+            if (!l2){l2->val=0;};
+            // get the total of the sum and update current
             int temp = l1->val+l2->val+carry;
             current->next = new ListNode(temp%10);
             current = current->next;
-            std::cout<<"temp: "<<temp<<", carry: "<<carry<<'\n';
             carry=temp/10;
+            std::cout<<"temp: "<<temp<<", carry: "<<carry<<'\n';
             //next node
-            
-            if(l1->next){l1=l1->next;}
-            if(l2->next){l2=l2->next;}
+            l1=l1->next;
+            l2=l2->next;
         }
         current->next = nullptr;
         
