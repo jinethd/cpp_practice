@@ -7,7 +7,7 @@
 // in this one we sort the arrays and avoid using the Kv
 
 class Solution {
-public:
+public://easy version of solution, kind of cheating
     std::vector<int> intersect(std::vector<int>& nums1, std::vector<int>& nums2) {
 
         std::sort(nums1.begin(),nums1.end());
