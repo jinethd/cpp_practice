@@ -5,6 +5,7 @@
 
 // we seek to provide an intersection between two arrays
 // in this one we sort the arrays and avoid using the Kv
+// this is the trivial version of the problem
 
 class Solution {
 public://easy version of solution, kind of cheating
