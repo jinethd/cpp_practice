@@ -23,7 +23,7 @@ public:
 int main() {
     Solution sol;
 
-    std::vector<int> nums = {0,0, 1, 0, 3, 12,0};
+    std::vector<int> nums = {0,0, 1, 0, 3, 12,5,0};
     sol.moveZeroes(nums);
     auto it = nums.begin();
 
