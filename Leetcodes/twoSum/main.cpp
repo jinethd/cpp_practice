@@ -1,10 +1,12 @@
 #include <iostream>
 //using namespace std;
-
+#include <set>
 
 class Iterators {
     public:
         void vectoranddeque() {
+            std::set<char> s;
+            s.insert('c');
 
             std::vector<int> vi = {1,2,3,4};
             vi.shrink_to_fit();
