@@ -1,4 +1,10 @@
 //on neetcode account
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+
+
+using namespace std;
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
@@ -20,3 +26,12 @@ public:
         return maxi;
     }
 };
+
+int main(){
+    Solution sol;
+    vector<int> myVec = {0,3,6,7,2,4,9,7};
+
+    cout<<sol.longestConsecutive(myVec)<<'\n';
+
+    return 0;
+}
